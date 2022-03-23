@@ -9,9 +9,11 @@ const parenthesesSingleLineJsx = (context: Rule.RuleContext) : Rule.RuleListener
             }
 
             // If element is nested inside another element, we don't need to handle it
-            // TypeScript does not know about JSXElement, so we have to disable it
-            // @ts-ignore
-            if (node.parent.type === 'JSXElement') {
+            // TypeScript does not know about JSXElement, so we have to cast it to a string
+            if (
+                node.parent.type as string === 'JSXElement' ||
+                node.parent.type as string === 'JSXFragment'
+            ) {
                 return;
             }
 
