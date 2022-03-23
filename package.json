@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-parentheses-single-line-jsx",
   "version": "1.0.0",
-  "description": "A ESLint rule to enforce parentheses around single line JSX.",
+  "description": "An ESLint rule to enforce parentheses around single line JSX.",
   "main": "./dist/index.js",
   "author": "Lukas Gjetting",
   "repository": "https://github.com/lukasgjetting/eslint-plugin-parentheses-single-line-jsx",
