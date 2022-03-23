@@ -30,6 +30,7 @@ const parenthesesSingleLineJsx = (context: Rule.RuleContext) : Rule.RuleListener
             context.report({
                 node,
                 message: 'Missing parentheses around single line JSX. ',
+                fix: (fixer) => fixer.replaceText(node, `(${sourceCode.getText(node)})`),
             });
 
         },
