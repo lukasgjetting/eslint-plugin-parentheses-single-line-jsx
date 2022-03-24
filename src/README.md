@@ -70,7 +70,7 @@ return (<MyComponent />);
 
 ```jsx
 <MyComponent
-    contentProp={(<MyComponent />)}
+    contentProp={(<Content />)}
 />
 ```
 

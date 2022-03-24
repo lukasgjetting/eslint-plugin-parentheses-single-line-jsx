@@ -29,7 +29,7 @@ const parenthesesSingleLineJsx = (context: Rule.RuleContext) : Rule.RuleListener
 
             context.report({
                 node,
-                message: 'Missing parentheses around single line JSX. ',
+                messageId: 'missingSingleLineParens',
                 fix: (fixer) => fixer.replaceText(node, `(${sourceCode.getText(node)})`),
             });
 
@@ -40,6 +40,12 @@ const parenthesesSingleLineJsx = (context: Rule.RuleContext) : Rule.RuleListener
 module.exports = {
     rules: {
         'parentheses-single-line-jsx': {
+            meta: {
+                fixable: 'code',
+                messages: {
+                    missingSingleLineParens: 'Missing parentheses around single line JSX.',
+                },
+            },
             create: parenthesesSingleLineJsx,
         },
     },
